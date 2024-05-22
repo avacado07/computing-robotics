@@ -1,0 +1,31 @@
+#define flamePin A0
+#define ledPin1 A5
+#define ledPin2 A4
+#define ledPin3 A2
+
+int state = 0;
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(flamePin, INPUT);
+  pinMode(ledPin1, OUTPUT);
+  pinMode(ledPin2, OUTPUT);
+  pinMode(ledPin3, OUTPUT);
+  Serial.begin(9600);
+  state = 0;
+
+}
+
+void loop() {
+  if (analogRead(flamePin) < 500){
+    state = 1;
+  Serial.println(analogRead(flamePin));
+  }
+  if (state == 1){
+    analogWrite(ledPin1, random(50)+125);
+    analogWrite(ledPin2, random(50)+115);
+    analogWrite(ledPin3, random(50)+135);
+    delay(random(100));
+  }
+  
+}
