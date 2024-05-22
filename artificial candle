@@ -6,7 +6,6 @@
 int state = 0;
 
 void setup() {
-  // put your setup code here, to run once:
   pinMode(flamePin, INPUT);
   pinMode(ledPin1, OUTPUT);
   pinMode(ledPin2, OUTPUT);
